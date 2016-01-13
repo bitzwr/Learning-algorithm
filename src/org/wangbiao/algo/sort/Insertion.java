@@ -32,10 +32,11 @@ public class Insertion {
      * @return 排序后数组
      */
     public static int[] sort(int[] arr) {
+        // [i,..) 为待排序序列
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i]; // 本次循环被排序的元素
             int j = i - 1; // 已排序序列最后一个位置
-            // 循环确定key值的位置, 并比key值大的依次后移
+            // [0, j]为已排序序列, 循环确定key值的位置, 并比key值大的依次后移
             while(j >= 0 && arr[j] > key) {
                 arr[j + 1] = arr[j];
                 j--;
