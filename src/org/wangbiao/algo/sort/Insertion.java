@@ -14,6 +14,7 @@ public class Insertion {
 
     /**
      * 插入排序: 遍历已排序序列, 找到待排序元素key的位置, 并插入.
+     *
      * 如下是<算法导论>中插入排序算法的伪代码.
      * <p>
      * INSERTION-SORT(A)
