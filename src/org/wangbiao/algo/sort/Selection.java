@@ -29,7 +29,7 @@ public class Selection {
                     minIndex = j;
                 }
             }
-            // 如果该次循环不为i,则交换
+            // 把待选序列中的最小值和待选序列的首位交换
             if (minIndex != i) {
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
