@@ -23,10 +23,20 @@ public class Stack<T> {
     }
 
     /**
+     * 查看栈顶元素
+     */
+    public T peek() {
+        if(!isEmpty()) {
+            return data.get(top);
+        }
+        return null;
+    }
+
+    /**
      * 元素入栈
      */
-    public void push(T t) {
-        data.add(t);
+    public void push(T item) {
+        data.add(item);
         top++;
     }
 
@@ -35,7 +45,7 @@ public class Stack<T> {
      */
     public T pop() throws Exception{
         if(isEmpty()) {
-            throw new Exception("栈为空");
+            return null;
         }
         return data.remove(top--);
     }
@@ -57,6 +67,7 @@ public class Stack<T> {
         stack.pop();
         stack.push(3);
         stack.pop();
+        System.out.println(stack.peek());
         stack.pop();
         stack.print();
     }
