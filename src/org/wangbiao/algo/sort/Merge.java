@@ -23,22 +23,23 @@ public class Merge {
 
     /**
      * 归并排序: 将两个有序的数组归并成一个更大的有序数组.
-     * 递归地将待排序数组分成两半分别排序,然后再将结果归并起来.
+     * 应用分治思想,递归地将待排序数组分成两半分别排序,然后再将结果归并起来.
      */
     private static void sort(int[] arr, int low, int high) {
         if(high <= low) {
             return;
         }
-        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
         sort(arr, low, mid);
         sort(arr, mid + 1, high);
         merge(arr, low, mid, high);
     }
 
     /**
-     * 将数组arr[low, mid] 和arr[mid + 1, high] 合并.
+     * 将数组arr[low, mid] 和arr[mid + 1, high] 合并. 合并的过程中排序.
      */
     private static void merge(int[] arr, int low, int mid, int high) {
+        // i, j 分别是左右两边数组的索引
         int i = low;
         int j = mid + 1;
         // 将a[low, high] 复制到辅助数组aux[low, high]中
