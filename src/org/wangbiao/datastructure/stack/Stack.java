@@ -1,6 +1,7 @@
 package org.wangbiao.datastructure.stack;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 
 /**
@@ -26,10 +27,10 @@ public class Stack<T> {
      * 查看栈顶元素
      */
     public T peek() {
-        if(!isEmpty()) {
-            return data.get(top);
+        if(isEmpty()) {
+           throw new EmptyStackException();
         }
-        return null;
+        return data.get(top);
     }
 
     /**
@@ -43,9 +44,9 @@ public class Stack<T> {
     /**
      * 栈顶元素出栈
      */
-    public T pop() throws Exception{
+    public T pop() {
         if(isEmpty()) {
-            return null;
+            throw new EmptyStackException();
         }
         return data.remove(top--);
     }
