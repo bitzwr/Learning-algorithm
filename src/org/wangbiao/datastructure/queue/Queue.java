@@ -8,45 +8,53 @@ public class Queue {
     private int[] data = new int[MAX_SIZE]; // 数组模拟队列
     private int front = 0; // 头
     private int rear = 0; // 尾
-    private int length = 0; // 长度
 
     /**
      * 入队
      */
-    public void enqueue(int t) {
-        if (!isFull()) {
-            data[rear] = t;
-            rear = (rear + 1) % MAX_SIZE;
-            length++;
+    public void enqueue(int t) throws Exception {
+        if (isFull()) {
+            throw new Exception("队列已满");
         }
+        data[rear] = t;
+        rear = (rear + 1) % MAX_SIZE;
     }
 
     /**
      * 出队
      */
     public int dequeue() throws Exception {
-        if (length != 0) {
-            int temp = front;
-            length--;
-            front = (front + 1) % MAX_SIZE;
-            return data[temp];
+        if (isEmpty()) {
+            throw new Exception("队列为空");
         }
-        throw new Exception("队列为空");
+        int temp = data[front];
+        front = (front + 1) % MAX_SIZE;
+        return data[temp];
     }
 
     /**
      * 查看对头
      */
     public int peek() throws Exception {
-        if (length != 0) {
-            return data[front];
+        if (isEmpty()) {
+            throw new Exception("队列为空");
         }
-        throw new Exception("队列为空");
+        return data[front];
     }
 
+    /**
+     * 判断是否为空
+     */
+    public boolean isEmpty() {
+        if (front == rear) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * 判断队列是否满
+     * 循环队列必须留一个空间,用于判断队列是否已满,
      */
     public boolean isFull() {
         return (rear + 1) % MAX_SIZE == front;
@@ -59,17 +67,22 @@ public class Queue {
         return (rear - front + MAX_SIZE) % MAX_SIZE;
     }
 
-    public void clear() {
-        front = 0;
-        rear = 0;
-        length = 0;
-    }
 
     public static void main(String[] args) throws Exception {
         Queue queue = new Queue();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
+        System.out.println(queue.length());
+        System.out.println(queue.dequeue());
+        queue.enqueue(4);
+        queue.enqueue(4);
+        System.out.println(queue.dequeue());
+        queue.enqueue(4);
+        queue.enqueue(4);
+        System.out.println(queue.dequeue());
+        queue.enqueue(4);
+        System.out.println(queue.dequeue());
         queue.enqueue(4);
         System.out.println();
     }
