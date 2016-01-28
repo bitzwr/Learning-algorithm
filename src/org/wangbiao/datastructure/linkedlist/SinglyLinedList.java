@@ -12,7 +12,7 @@ public class SinglyLinedList<T> {
      */
     public void frontInsert(T data) throws Exception {
         if (head == null) {
-            throw new Exception("LinkedList do not contains any element");
+            throw new Exception("LinkedList do not init");
         }
         Node<T> newNode = new Node<T>(data);
         newNode.next = head.next;
@@ -34,9 +34,28 @@ public class SinglyLinedList<T> {
         node.next = newNode;
     }
 
-    public void insert(T data, int i) {
+    /**
+     * 插入元素到指定位置
+     */
+    public void insert(T data, int i) throws Exception {
+        if (head == null) {
+            throw new Exception("LinkedList do not init");
+        }
+        if (i <= 0) {
+            throw new IllegalArgumentException("i must be a positive integer");
+        }
+        Node<T> node = head;
+        int j = 0;
+        while (node.next != null && j < i - 1) { // 寻找第i - 1 个节点
+            node = node.next;
+            ++j;
+        }
+        if (node == null || j > i - 1) {
+            throw new Exception("i greater than length + 1");
+        }
         Node<T> newNode = new Node<T>(data);
-
+        newNode.next = node.next;
+        node.next = newNode;
     }
 
     /**
@@ -88,9 +107,10 @@ public class SinglyLinedList<T> {
         SinglyLinedList<Integer> list = new SinglyLinedList<Integer>();
         list.rearInsert(1);
         list.rearInsert(2);
-        list.deleteElem(2);
+        list.insert(3, 2);
         list.frontInsert(3);
         list.frontInsert(4);
+        list.deleteElem(2);
         list.getElem(1);
     }
 }
