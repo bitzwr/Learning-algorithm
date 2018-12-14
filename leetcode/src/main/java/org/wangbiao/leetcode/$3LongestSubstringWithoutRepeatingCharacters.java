@@ -25,7 +25,7 @@ public class $3LongestSubstringWithoutRepeatingCharacters {
         int n = s.length(), result = 0;
         int i = 0, j = 0; // 两个指针
         while (i < n && j < n) {
-            // 1.遍历s的字符，如是不重复就移致力j向后走一位
+            // 1.遍历s的字符，如是不重复就移动j向后走一位
             if (!set.contains(s.charAt(j))) {
                 set.add(s.charAt(j++));
                 result = Math.max(result, j - i); // 3.j和i的距离就是不重复子串的长度；取最大值
