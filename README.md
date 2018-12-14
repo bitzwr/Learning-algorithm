@@ -16,7 +16,7 @@
 
 ### 内容
 * 算法
-	* 排序
+	* [排序](https://github.com/bitzwr/Learning-algorithm/tree/master/algorithm/src/main/java/org/wangbiao/algo/sort)
 		* [冒泡排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Bubble.java)
 		* [选择排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Selection.java)
 		* [插入排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Insertion.java)
