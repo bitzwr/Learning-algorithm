@@ -19,7 +19,7 @@ public class $7ReverseInteger {
     public static int reverse(int x) {
         // -2147483648 翻转后溢出，直接特殊处理
         if (x == Integer.MIN_VALUE) {
-            x = 0;
+            return 0;
         }
         boolean positive = x >= 0;
         String temp = String.valueOf(Math.abs(x));
