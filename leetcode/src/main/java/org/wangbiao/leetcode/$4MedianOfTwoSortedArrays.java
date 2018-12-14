@@ -9,10 +9,7 @@ public class $4MedianOfTwoSortedArrays {
         int midIdx = total / 2;
         int[] arr = new int[total];
         int i = 0, j = 0, idx = 0;
-        while (i < len1 || j < len2) { // 合并数组
-            if (idx > midIdx) {
-                break;
-            }
+        while ((i < len1 || j < len2) && idx <= midIdx) { // 合并数组
             if (i == len1) {
                 arr[idx++] = nums2[j++];
                 continue;
@@ -37,9 +34,9 @@ public class $4MedianOfTwoSortedArrays {
 
 
     public static void main(String[] args) {
-        int[] array = mergeTwoArray(new int[]{1, 3, 5, 8, 9}, new int[]{2, 4, 6, 7});
+        int[] array = mergeTwoArray(new int[]{1, 3, 5, 8, 9}, new int[]{2, 4, 6});
         System.out.println(Arrays.toString(array));
-        double v = findMedianSortedArrays(new int[]{1, 3, 5, 8, 9}, new int[]{2, 4, 6, 7});
+        double v = findMedianSortedArrays(new int[]{1, 3, 5, 8, 9}, new int[]{2, 4, 6});
         System.out.println(v);
     }
 
