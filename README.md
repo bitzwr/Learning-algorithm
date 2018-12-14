@@ -17,14 +17,14 @@
 ### 内容
 * 算法
 	* 排序
-		* 冒泡排序
-		* 选择排序
-		* 插入排序
-		* 希尔排序
-		* 快速排序
-		* 归并排序
+		* [冒泡排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Bubble.java)
+		* [选择排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Selection.java)
+		* [插入排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Insertion.java)
+		* [希尔排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Shell.java)
+		* [快速排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Quick.java) | [3路快排](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Quick3way.java)
+		* [归并排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Merge.java)
 		* 堆排序
-		* 基数排序
+		* [基数排序](https://github.com/bitzwr/Learning-algorithm/blob/master/algorithm/src/main/java/org/wangbiao/algo/sort/Counting.java)
 	* 贪心算法
 	* 查找算法
 	* 动态规划
