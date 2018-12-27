@@ -29,6 +29,7 @@ public class NaiveStringMatcher {
     }
 
     public static void main(String[] args) {
-        match("qabcababca", "abcab");
+        int match = match("qafadfadfafabcababca", "abcab");
+        System.out.println(match);
     }
 }
