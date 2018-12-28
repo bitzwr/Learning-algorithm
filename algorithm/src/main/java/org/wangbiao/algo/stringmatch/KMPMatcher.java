@@ -31,6 +31,13 @@ public class KMPMatcher {
         return -1;
     }
 
+    /* KMP 核心思想就是提前计算出前辍函数，而前辍函数只于自身相关。
+     * pattern: abababca
+     * index:   01234567
+     * value:   00123401
+     *
+     * 前辍：
+     */
     public static int[] computePrefixArray(String P) {
         int m = P.length();
         int[] prefix = new int[m];
@@ -47,7 +54,7 @@ public class KMPMatcher {
     }
 
     public static void main(String[] args) {
-        int match = match("afabcababaca", "ababa");
+        int match = match("afaabababcabaca", "abababca");
         System.out.println(match);
     }
 
