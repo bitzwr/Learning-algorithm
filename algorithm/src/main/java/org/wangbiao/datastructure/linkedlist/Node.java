@@ -14,4 +14,8 @@ public class Node<T> {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return data + (next != null ?  "->" + next : "");
+    }
 }

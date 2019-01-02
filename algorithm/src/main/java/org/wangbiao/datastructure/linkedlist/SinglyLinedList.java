@@ -103,14 +103,30 @@ public class SinglyLinedList<T> {
         return node.data;
     }
 
+
+    public static Node reverse(Node node) {
+        Node head = new Node();
+        Node next = null;
+        while (node != null) {
+            next = node.next; // 备份
+            node.next = head.next;
+            head.next = node;
+
+            node = next;
+        }
+        return head.next;
+    }
+
+    public boolean hasCircle(Node node) {
+        Node faster, slower;
+        while (node != null && node.next != null) {
+
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) throws Exception {
-        SinglyLinedList<Integer> list = new SinglyLinedList<Integer>();
-        list.rearInsert(1);
-        list.rearInsert(2);
-        list.insert(3, 2);
-        list.frontInsert(3);
-        list.frontInsert(4);
-        list.deleteElem(2);
-        list.getElem(1);
+
     }
 }
