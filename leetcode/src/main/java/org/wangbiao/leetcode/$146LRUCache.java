@@ -44,35 +44,39 @@ public class $146LRUCache {
             head.pre = head.next = head; // 哨兵，减化边界判断
         }
 
-        public int get(int key) {
+        private Node getNode(int key) {
             Node node = head.next;
             while (node != null && node != head) {
                 if (node.key == key) {
                     node.access(this);
-                    return node.value;
+                    return node;
                 } else {
                     node = node.next;
                 }
             }
-            return -1;
+            return null;
+        }
+
+        public int get(int key) {
+            Node node = getNode(key);
+            if (node != null) {
+                return node.value;
+            } else {
+                return -1;
+            }
         }
 
         public void put(int key, int value) {
-            Node temp = head.next;
-            while (temp != null && temp != head) { // 先查找
-                if (temp.key == key) {
-                    temp.value = value;
-                    temp.access(this);
-                    return;
-                } else {
-                    temp = temp.next;
+            Node node = getNode(key);
+            if (node != null) {
+                node.value = value;
+            } else {
+                node = new Node(key, value);
+                node.addBefore(head);
+                size++;
+                if (size > capacity) {
+                    head.next.remove();
                 }
-            }
-            Node node = new Node(key, value);
-            node.addBefore(head);
-            size++;
-            if (size > capacity) {
-                head.next.remove();
             }
         }
 
