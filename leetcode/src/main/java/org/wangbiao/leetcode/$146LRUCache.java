@@ -1,9 +1,12 @@
 package org.wangbiao.leetcode;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class $146LRUCache {
 
     public static class LRUCache {
-        private int capacity;
+        private final int capacity;
         private int size;
 
         private Node head;
@@ -80,6 +83,21 @@ public class $146LRUCache {
             }
         }
 
+    }
+
+
+    public static class LRUCache2<K, V> extends LinkedHashMap<K, V> {
+        private final int capacity;
+
+        public LRUCache2(int capacity) {
+            super(16, 0.75f, false);
+            this.capacity = capacity;
+        }
+
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+            return size() > capacity;
+        }
     }
 
 
