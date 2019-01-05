@@ -10,18 +10,19 @@ package org.wangbiao.leetcode;
  * The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].
  * In this case, the max area of water (blue section) the container can contain is 49.
  *
+ *
  * 9
- * 8     |
- * 7     |                 |
- * 6     |  |              |
- * 5     |  |     |        |
- * 4     |  |     |  |     |
- * 3     |  |     |  |     |
- * 2     |  |     |  |  |  |
- * 1     |  |  |  |  |  |  |
- * 0  |  |  |  |  |  |  |  |
- *    1  2  3  4  5  6  7  8
- * @see <a href="https://leetcode.com/problems/container-with-most-water/"><a/>
+ * 8     |              |
+ * 7     |              |     |
+ * 6     |  |           |     |
+ * 5     |  |     |     |     |
+ * 4     |  |     |  |  |     |
+ * 3     |  |     |  |  |  |  |
+ * 2     |  |  |  |  |  |  |  |
+ * 1  |  |  |  |  |  |  |  |  |
+ * 0  1  2  3  4  5  6  7  8  9
+ *
+ * * @see <a href="https://leetcode.com/problems/container-with-most-water/"><a/>
  */
 public class $11ContainerWithMostWater {
 
